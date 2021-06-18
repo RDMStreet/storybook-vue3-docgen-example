@@ -7,6 +7,7 @@ import {
   nextTick,
   watch,
   reactive,
+  defineComponent,
 } from 'vue'
 import type { PropType } from 'vue'
 import JSONEditor from 'jsoneditor'
@@ -14,7 +15,7 @@ import type { JSONEditorOptions } from 'jsoneditor'
 import 'jsoneditor/dist/jsoneditor.min.css'
 import isEmpty from 'lodash/fp/isEmpty'
 
-export default {
+export default defineComponent({
   name: 'SJsonInput',
   props: {
     /**
@@ -28,8 +29,8 @@ export default {
      * Property description
      */
     options: {
-      type: Object as PropType<JSONEditorOptions>,
-      default: () => ({}),
+      type: Object,
+      default: () => ({}) as PropType<JSONEditorOptions>,
     },
     /**
      * Property description
@@ -47,7 +48,7 @@ export default {
     },
   },
   emits: ['input', 'error'],
-  setup(props: any, { emit }: { emit: any }) {
+  setup(props, { emit }: { emit: any }) {
     props = reactive(props)
 
     const minHeight = 178

@@ -4,7 +4,7 @@ export default {
   title: 'Example/Button',
   component: MyButton,
   argTypes: {
-    height: { control: 'color' },
+    value: { control: 'json', description: 'Description from story' },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     onClick: {},
   },
@@ -40,6 +40,7 @@ Large.args = {
 
 export const Small = Template.bind({});
 Small.args = {
+  height: '400px',
   size: 'small',
   label: 'Button',
 };
