@@ -1,4 +1,4 @@
-import MyButton from '../components/SJsonInputTest.vue'
+import MyButton from '../components/SJsonInputClassic.vue'
 
 export default {
   title: 'Example/Button',
