@@ -179,7 +179,7 @@ export default defineComponent({
       handleStretchMousedown,
     }
   },
-}
+})
 </script>
 
 <template>
