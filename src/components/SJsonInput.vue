@@ -1,39 +1,4 @@
-<script lang="ts">
-export default {
-  props: {
-    /**
-     * Property description
-     */
-     value: {
-      type: Object,
-      default: () => ({}),
-    },
-    /**
-     * Property description
-     */
-    options: {
-      type: Object as PropType<JSONEditorOptions>,
-      default: () => ({}),
-    },
-    /**
-     * Property description
-     */
-    height: {
-      type: String,
-      default: '',
-    },
-    /**
-     * Property description
-     */
-    dictionary: {
-      type: Array as PropType<Array<string>>,
-      default: () => ([]),
-    },
-  }
-}
-</script>
-
-<script setup="props" lang="ts">
+<script setup lang="ts">
 import {
   defineProps,
   computed,
@@ -51,6 +16,41 @@ import 'jsoneditor/dist/jsoneditor.min.css'
 import isEmpty from 'lodash/fp/isEmpty'
 
 const emit = defineEmit(['input', 'error'])
+
+const props = defineProps({
+  /**
+   * What will be returned here will available to the component
+   * Functions referenced here will act like methods
+   */
+  value: {
+    type: Object,
+    default: () => ({}),
+  },
+  /**
+   * What will be returned here will available to the component
+   * Functions referenced here will act like methods
+   */
+  options: {
+    type: Object as PropType<JSONEditorOptions>,
+    default: () => ({}),
+  },
+  /**
+   * What will be returned here will available to the component
+   * Functions referenced here will act like methods
+   */
+  height: {
+    type: String,
+    default: '',
+  },
+  /**
+   * What will be returned here will available to the component
+   * Functions referenced here will act like methods
+   */
+  dictionary: {
+    type: Array as PropType<Array<string>>,
+    default: () => ([]),
+  },
+})
 
 const minHeight = 178
 
